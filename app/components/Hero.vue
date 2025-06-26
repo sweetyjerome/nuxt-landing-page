@@ -4,24 +4,30 @@
     <img src="/img/atlantean_treasures_logo.png" alt="Game Logo" class="game-logo" />
 
     <div class="hero-content">
-      <!-- Left Section: Heading, Subheading, and Video -->
+      <!-- Left Section: Heading, Subheading -->
       <div class="hero-left">
         <div class="info-box">
           <h5 class="info">Exclusive offer</h5>
         </div>
         <p class="hero-heading"> Grab 200 Free Spins</p>
-        <p class="hero-subheading">For just 10$ deposit</p>
+        <p class="hero-subheading">Now is the time to grab your riches</p>
+      <!--   
         <video autoplay muted loop playsinline class="hero-video">
           <source src="https://cdn.desdev.co/atlanteantreasures.webm" type="video/webm" />
           Your browser does not support the video tag.
-        </video>
+        </video> -->
+        <p></p>
         <button class="claim-now-btn">Claim Now</button>
       </div>
 
-      <!-- Right Section: Images -->
+      <!-- Right Section: Images and video -->
       <div class="hero-right">
-        <img src="/img/bubble_1.png" alt="Bubble-1" class="bubble" />
-        <img src="/img/bubble_2.png" alt="Bubble-2" class="number" />
+         <!-- <img src="/img/bubble_1.png" alt="Bubble-1" class="bubble" /> -->
+        <video autoplay muted loop playsinline class="hero-video"> 
+          <source src="https://cdn.desdev.co/atlanteantreasures.webm" type="video/webm" />
+          Your browser does not support the video tag.
+        </video>
+      
       </div>
     </div>
   </section>
@@ -44,7 +50,8 @@ const formattedJackpot = computed(() =>
 .hero {
   position: relative;
   width: 100vw;
-  padding: 2rem 6rem;
+  height: 80vh;
+  padding: 0 6rem;
   background: url('/img/hero.jpg') no-repeat center center / cover;
   display: flex;
   flex-direction: column;
@@ -54,6 +61,8 @@ const formattedJackpot = computed(() =>
   box-sizing: border-box;
 
   .game-logo {
+    align-self: flex-start;
+    margin-top: 9rem;
     width: 230px;
     transform: scale(0.5);
     opacity: 0;
@@ -75,14 +84,15 @@ const formattedJackpot = computed(() =>
   }
 
   .hero-left {
-    flex: 1;
-    display: flex;
+    flex: 0 0 70%; // Take 60% of the width
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding-right: 2rem;
+    height: 60vh;
+    padding-top: 2rem;
 
     .info-box {
+      margin-bottom:1rem;
       background-color: #28a745;
       color: #fff;
       padding: 2px 8px;
@@ -106,19 +116,22 @@ const formattedJackpot = computed(() =>
     }
 
     .hero-subheading {
-      font-size: 2rem;
-      margin-bottom: 4rem;
-      text-shadow: 1px 1px 8px #fff;
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 5px #fff;
       color: #fff;
-      line-height: 1;
+
+      font-weight: bold;
     }
 
     .claim-now-btn {
+      margin-top: 1.5rem;
+      align-self: center;
       position: relative;
       padding: 0.75rem 2.5rem;
       font-size: 1.2rem;
       font-weight: normal;
-      color: #fff;
+      color: var(--tertiary-accent);
       background-color: var(--primary-accent); // or transparent if needed
       border: none;
       border-radius: 0.75rem;
@@ -127,10 +140,10 @@ const formattedJackpot = computed(() =>
       z-index: 0;
       transition: background-color 0.3s ease;
 
-      // Inner glow effect on hover
+
       &:hover {
-        color: var(--primary-accent);
-        background-color: var(--tertiary-accent);
+        color: var(--tertiary-accent);
+        background-color: var(--secondary-accent);
       }
     }
 
@@ -144,22 +157,16 @@ const formattedJackpot = computed(() =>
       }
     }
 
-
-    .hero-video {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    }
   }
 
   .hero-right {
-    flex: 1;
+    padding-right: 3rem;
+    flex: 0 0 30%; // Take 40% of the width
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
 
     img {
       width: 120px;
@@ -174,7 +181,21 @@ const formattedJackpot = computed(() =>
     .number {
       animation: popScale 1s 0.6s ease-out forwards;
     }
+    .hero-video {
+      width: 120%;
+      border-radius: 12px; // Add a 12px border radius
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); // Optional: Add a shadow for better appearance
+    }
   }
+  @media (max-width: 1024px) {
+      flex-direction: column; // Stack sections vertically on smaller screens
+      gap: 2rem;
+
+      .hero-left,
+      .hero-right {
+        flex: 1; // Both sections take equal width when stacked
+      }
+    }
 }
 
 @keyframes popScale {
