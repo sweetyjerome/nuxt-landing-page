@@ -18,6 +18,9 @@
         </video> -->
         <p></p>
         <button class="claim-now-btn">Claim Now</button>
+        <p class="terms">
+        Deposit just $10 and activate your 200 free spins instantly.<br>Full terms below.
+        </p>
       </div>
 
       <!-- Right Section: Images and video -->
@@ -31,6 +34,13 @@
       </div>
     </div>
   </section>
+
+
+
+
+
+
+
 </template>
 
 <script setup lang="ts">
@@ -123,7 +133,11 @@ const formattedJackpot = computed(() =>
 
       font-weight: bold;
     }
-
+    .terms {
+      font-size: 0.8rem;
+      color: #b3aeae;
+      margin-top: 1rem;
+    }
     .claim-now-btn {
       margin-top: 1.5rem;
       align-self: center;
@@ -145,6 +159,7 @@ const formattedJackpot = computed(() =>
         color: var(--tertiary-accent);
         background-color: var(--secondary-accent);
       }
+
     }
 
     @keyframes animate-border {
