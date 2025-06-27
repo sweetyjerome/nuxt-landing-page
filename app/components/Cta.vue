@@ -25,7 +25,7 @@
 }
 
 .cta-content {
-  color: #fff;
+  color: var(--primary-text);
 }
 
 .cta-heading {
@@ -39,9 +39,22 @@
   margin-bottom: 1.5rem;
 }
 
-.cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(247, 147, 26, 0.6);
-  background: #ffa931;
+
+
+@media (max-width: 450px) {
+  .cta-container {
+    padding: 2rem 1rem; 
+    max-width: 100%; 
+    margin: 1.5rem 1rem; 
+
+  .cta-heading {
+    font-size: 1.5rem; 
+  }
+
+  .cta-subtext {
+    font-size: 1rem; 
+    margin-bottom: 1rem; 
+  }
+}
 }
 </style>

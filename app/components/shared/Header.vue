@@ -34,4 +34,30 @@
   gap: 1rem;
   padding: 0 1.5rem;
 }
+@media (max-width: 425px) {
+  .header {
+    padding: 0.5rem 0;
+
+    .container {
+      flex-direction: column; /* Stack logo and nav vertically */
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo {
+      font-size: 1.25rem; /* Reduce logo font size */
+    }
+
+    .nav {
+      flex-direction: column; /* Stack buttons vertically */
+      gap: 0.5rem;
+
+      a {
+        display: none;
+        font-size: 0.9rem; /* Reduce button font size */
+        padding: 0.4rem 0.8rem; /* Adjust button padding */
+      }
+    }
+  }
+}
 </style>

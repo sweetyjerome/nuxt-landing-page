@@ -2,9 +2,9 @@
   <section class="hero">
     <!-- Game logo and jackpot value -->
     <div class="logo-container">
-    <img src="/img/atlantean_treasures_logo.png" alt="Game Logo" class="game-logo" />
-    <div v-if="formattedJackpot" class="jackpot-chip">{{ formattedJackpot }}</div>
-  </div>
+      <img src="/img/atlantean_treasures_logo.png" alt="Game Logo" class="game-logo" />
+      <div v-if="formattedJackpot" class="jackpot-chip">{{ formattedJackpot }}</div>
+    </div>
 
     <div class="hero-content">
       <!-- Left Section: Heading, Subheading -->
@@ -14,26 +14,26 @@
         </div>
         <p class="hero-heading"> Grab 200 Free Spins</p>
         <p class="hero-subheading">Now is the time to grab your riches</p>
-      <!--   
+        <!--   
         <video autoplay muted loop playsinline class="hero-video">
           <source src="https://cdn.desdev.co/atlanteantreasures.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video> -->
-        <p></p>
+     
         <Button @click="" />
         <p class="terms">
-        Deposit just $10 and activate your 200 free spins instantly.<br>Full terms below.
+          Deposit just $10 and activate your 200 free spins instantly.<br>Full terms below.
         </p>
       </div>
 
       <!-- Right Section: Images and video -->
       <div class="hero-right">
-         <!-- <img src="/img/bubble_1.png" alt="Bubble-1" class="bubble" /> -->
-        <video autoplay muted loop playsinline class="hero-video"> 
+        <!-- <img src="/img/bubble_1.png" alt="Bubble-1" class="bubble" /> -->
+        <video autoplay muted loop playsinline class="hero-video">
           <source src="https://cdn.desdev.co/atlanteantreasures.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video>
-      
+
       </div>
     </div>
   </section>
@@ -73,30 +73,60 @@ const formattedJackpot = computed(() =>
   overflow: hidden;
   box-sizing: border-box;
 
+  @media (max-width: 425px) {
+    padding: 0 1rem;
+    background-size: contain; // Makes the image fit without cropping
+    background-position: top;
+  }
+
 
   .logo-container {
     gap: 2rem;
 
     .game-logo {
-    align-self: flex-start;
-    margin-top: 7rem;
-    width: 200px;
-    transform: scale(0.5);
-    opacity: 0;
-    animation: popScale 0.8s ease-out 1.2s forwards;
-  }
+      align-self: flex-start;
+      margin-top: 7rem;
+      width: 200px;
+      transform: scale(0.5);
+      opacity: 0;
+      animation: popScale 0.8s ease-out 1.2s forwards;
+    }
 
     .jackpot-chip {
       margin-top: 1rem;
-      background: radial-gradient(circle,rgba(248, 251, 63, 1) 0%, rgba(224, 157, 49, 1) 100%);
+      background: radial-gradient(circle, rgba(248, 251, 63, 1) 0%, rgba(224, 157, 49, 1) 100%);
       color: #000;
-      border: 2px solid #fff; 
-      border-radius: 20px; 
-      padding: 0.5rem 1rem; 
-      font-size: 1.4rem; 
-      font-weight: bold; 
-      text-align: center; 
+      border: 2px solid #fff;
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-align: center;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+  }
+
+  @media (max-width: 425px) {
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 15rem;
+
+      .game-logo {
+        width: 150px;
+        margin-top: 0;
+        transform: scale(1);
+      }
+
+      .jackpot-chip {
+        margin-top: 0;
+        font-size: 1rem;
+        padding: 0.3rem 0.6rem;
+      }
     }
   }
 
@@ -108,9 +138,10 @@ const formattedJackpot = computed(() =>
     max-width: 1200px;
     padding: 2rem;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 425px) {
+      padding: 0;
+      display: flex;
       flex-direction: column;
-      gap: 2rem;
     }
   }
 
@@ -123,7 +154,7 @@ const formattedJackpot = computed(() =>
     padding-top: 2rem;
 
     .info-box {
-      margin-bottom:1rem;
+      margin-bottom: 1rem;
       background-color: #28a745;
       color: #fff;
       padding: 2px 8px;
@@ -154,6 +185,7 @@ const formattedJackpot = computed(() =>
 
       font-weight: bold;
     }
+
     .terms {
       font-size: 0.8rem;
       color: #b3aeae;
@@ -170,8 +202,42 @@ const formattedJackpot = computed(() =>
       }
     }
 
+    //------------------------- media queries -------------------------
+    @media screen and (max-width: 425px) {
+      .hero-left {
+        flex: 1; // Take full width on smaller screens
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+      .info-box {
+
+      margin-bottom: 0.3rem;
+    }
+
+    .info {
+      font-size: 0.6rem;
+    }
+      .hero-heading {
+        font-size: 1.8rem; // Adjusted for smaller screens
+      }
+
+      .hero-subheading {
+        font-size: 1rem; // Adjusted for smaller screens
+      }
+
+      .terms {
+        font-size: 0.6rem; // Adjusted for smaller screens
+        margin-top: 0.3rem;
+      }
+      
+    }
+
   }
 
+//-------------------------- Right Section -------------------------
   .hero-right {
     padding-right: 3rem;
     flex: 0 0 30%; // Take 40% of the width
@@ -194,23 +260,29 @@ const formattedJackpot = computed(() =>
     .number {
       animation: popScale 1s 0.6s ease-out forwards;
     }
+
     .hero-video {
       width: 120%;
-      border-radius: 12px; // Add a 12px border radius
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); // Optional: Add a shadow for better appearance
+      border-radius: 12px; 
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+//-------------------------- media queries -------------------------
+    @media screen and (max-width: 425px) {
+      .hero-right {
+        flex: 1; // Take full width on smaller screens
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+
+        .hero-video {
+          width: 50%;
+          border-radius: 8px;
+        }
+      }
+      
     }
   }
-  @media (max-width: 1024px) {
-      flex-direction: column; // Stack sections vertically on smaller screens
-      gap: 2rem;
-
-      .hero-left,
-      .hero-right {
-        flex: 1; // Both sections take equal width when stacked
-      }
-    }
 }
-
 @keyframes popScale {
   0% {
     transform: scale(0.5);
@@ -226,5 +298,6 @@ const formattedJackpot = computed(() =>
     transform: scale(1);
     opacity: 1;
   }
+}
 }
 </style>

@@ -58,30 +58,26 @@
 
 <style scoped lang="scss">
 .offer-details {
-  //background: linear-gradient(to right, #00293c, #014152);
   background: #000;
   color: #fff;
-  padding-top: 2rem;
 
   .details-wrapper {
-    padding-left: 9rem;
-    max-width: 1000px;
+    padding: 9rem;
+    max-width: 100%;
     text-align: left;
 
     .offer-item {
       margin-bottom: 1.5rem;
       padding: 1rem;
       border-left: 2px solid #a1a1a1;
-      /* Highlighted left border */
-      //background-color:  rgba(249, 249, 249, 0.5);
+      background-color: #242323;
       border-radius: 6px;
     }
 
     .offer-item h3 {
       margin-top: 0;
       margin-bottom: 0.5rem;
-      font-size: 1.125rem;
-      /* 18px */
+      font-size: 1.125rem; 
       font-weight: 600;
       color: var(--primary-text);
     }
@@ -90,7 +86,6 @@
     .offer-item ul {
       margin: 0;
       font-size: 1rem;
-      /* 16px */
       color: var(--primary-text);
     }
 
@@ -102,7 +97,6 @@
     .offer-item li {
       margin-bottom: 0.5rem;
     }
-
   }
 
   .title {
@@ -110,19 +104,46 @@
     margin-bottom: 2rem;
     font-weight: bold;
     color: var(--primary-text);
+    text-align: left; 
   }
 
   p {
     font-size: small;
   }
 
-  .offer-grid {
-    margin-bottom: 2rem;
-  }
-
   .disclaimer {
     font-size: small;
     opacity: 0.7;
+    text-align: left;
+  }
+
+  @media (max-width: 425px) {
+    .details-wrapper {
+      padding: 0 1rem; 
+    }
+
+    .offer-item {
+      padding: 0.75rem; 
+    }
+
+    .offer-item h3 {
+      font-size: 1rem; 
+    }
+
+    .offer-item p,
+    .offer-item ul {
+      font-size: 0.7rem; // Reduce text size
+    }
+
+    .title {
+      font-size: 1.25rem; // Reduce title size
+      text-align: center;
+    }
+
+    .disclaimer {
+      font-size: 0.8rem; // Reduce disclaimer text size
+      text-align: center;
+    }
   }
 }
 </style>
