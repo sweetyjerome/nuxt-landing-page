@@ -5,12 +5,12 @@
 </script>
 <template>
   <div>
-    <div class="container">
-      <Hero />
+    <div class="grid grid--row">
+      <Hero /> 
+      <Offerdetails />
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-
 </style>
