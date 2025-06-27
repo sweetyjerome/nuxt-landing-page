@@ -1,57 +1,34 @@
 <template>
-  <button :class="['base-button', variant]" @click="onClick">
-    <slot />
+  <button class="claim-now-btn" @click="emit('click')">
+    <slot>Claim Now</slot>
   </button>
 </template>
 
 <script setup lang="ts">
-defineProps<{
-  variant?: 'primary' | 'secondary'
-  onClick?: () => void
-}>()
+const emit = defineEmits(['click'])
 </script>
 
-<style scoped lang="scss">
-.base-button {
-  padding: 0.75rem 2rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 0.5rem;
-  cursor: pointer;
+<style scoped>
+.claim-now-btn {
+  margin-top: 1.5rem;
+  align-self: center;
+  position: relative;
+  padding: 0.75rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: var(--primary-text);
+  background-color: var(--primary-accent);
   border: none;
-  transition: background 0.3s ease;
-  background-color: var(--primary-accent);
-}
-.claim-btn {
-      padding: 0.75rem 2rem;
-      font-size: 1.1rem;
-      font-weight: bold;
-      background-color: var(--primary-accent);
-      border: none;
-      border-radius: 0.5rem;
-      color: #fff;
-      cursor: pointer;
-      transition: background 0.3s ease;
-
-      &:hover {
-        background-color: var(---accent);
-      }
-    }
-.primary {
-  background-color: var(--primary-accent);
-  color: #fff;
-
-  &:hover {
-    background-color: darken(var(--primary-accent), 10%);
-  }
+  border-radius: 0.25rem;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 0;
+  transition: background-color 0.3s ease;
 }
 
-.secondary {
+.claim-now-btn:hover {
+  color: var(--primary-text);
   background-color: var(--secondary-accent);
-  color: #fff;
-
-  &:hover {
-    background-color: darken(var(--secondary-accent), 10%);
-  }
+  transform: scale(1.05);
 }
 </style>

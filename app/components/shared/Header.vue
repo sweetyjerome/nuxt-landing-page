@@ -25,11 +25,13 @@
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
+  margin: 0 1.5rem;
   color: var(--primary-text);
 }
 
 .nav {
   display: flex;
   gap: 1rem;
+  padding: 0 1.5rem;
 }
 </style>

@@ -1,7 +1,10 @@
 <template>
   <section class="hero">
-    <!-- Game logo -->
+    <!-- Game logo and jackpot value -->
+    <div class="logo-container">
     <img src="/img/atlantean_treasures_logo.png" alt="Game Logo" class="game-logo" />
+    <div v-if="formattedJackpot" class="jackpot-chip">{{ formattedJackpot }}</div>
+  </div>
 
     <div class="hero-content">
       <!-- Left Section: Heading, Subheading -->
@@ -17,7 +20,7 @@
           Your browser does not support the video tag.
         </video> -->
         <p></p>
-        <button class="claim-now-btn">Claim Now</button>
+        <Button @click="" />
         <p class="terms">
         Deposit just $10 and activate your 200 free spins instantly.<br>Full terms below.
         </p>
@@ -44,7 +47,7 @@
 </template>
 
 <script setup lang="ts">
-const { jackpot, pending, error } = await useCasinoJackpotApi()
+const { jackpot, pending, error } = useCasinoJackpotApi()
 
 const formattedJackpot = computed(() =>
   jackpot.value
@@ -70,13 +73,31 @@ const formattedJackpot = computed(() =>
   overflow: hidden;
   box-sizing: border-box;
 
-  .game-logo {
+
+  .logo-container {
+    gap: 2rem;
+
+    .game-logo {
     align-self: flex-start;
-    margin-top: 9rem;
-    width: 230px;
+    margin-top: 7rem;
+    width: 200px;
     transform: scale(0.5);
     opacity: 0;
     animation: popScale 0.8s ease-out 1.2s forwards;
+  }
+
+    .jackpot-chip {
+      margin-top: 1rem;
+      background: radial-gradient(circle,rgba(248, 251, 63, 1) 0%, rgba(224, 157, 49, 1) 100%);
+      color: #000;
+      border: 2px solid #fff; 
+      border-radius: 20px; 
+      padding: 0.5rem 1rem; 
+      font-size: 1.4rem; 
+      font-weight: bold; 
+      text-align: center; 
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
   }
 
   .hero-content {
@@ -137,29 +158,6 @@ const formattedJackpot = computed(() =>
       font-size: 0.8rem;
       color: #b3aeae;
       margin-top: 1rem;
-    }
-    .claim-now-btn {
-      margin-top: 1.5rem;
-      align-self: center;
-      position: relative;
-      padding: 0.75rem 2.5rem;
-      font-size: 1.2rem;
-      font-weight: normal;
-      color: var(--tertiary-accent);
-      background-color: var(--primary-accent); // or transparent if needed
-      border: none;
-      border-radius: 0.75rem;
-      overflow: hidden;
-      cursor: pointer;
-      z-index: 0;
-      transition: background-color 0.3s ease;
-
-
-      &:hover {
-        color: var(--tertiary-accent);
-        background-color: var(--secondary-accent);
-      }
-
     }
 
     @keyframes animate-border {

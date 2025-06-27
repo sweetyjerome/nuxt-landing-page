@@ -1,5 +1,13 @@
 export default defineEventHandler(async (event) => {
-  return JSON.stringify({
-    Hello: "World",
-  });
-});
+  try {
+    const res = await $fetch('https://jackpots.desdev.co/')
+    console.log('Fetched jackpot data:', res)
+    return res
+
+  } catch (err) {
+    console.error('Failed to fetch jackpot data:', err)
+    return {
+      error: 'Unable to fetch jackpot data',
+    }
+  }
+})

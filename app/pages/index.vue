@@ -8,6 +8,7 @@
     <div class="grid grid--row">
       <Hero /> 
       <Offerdetails />
+      <Cta/>
     </div>
   </div>
 </template>

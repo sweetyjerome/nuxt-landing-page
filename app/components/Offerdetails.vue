@@ -2,35 +2,54 @@
   <section class="offer-details">
     <div class="details-wrapper">
       <h2 class="title">Offer Details</h2>
-      <p>Available to new players only. Minimum deposit of $10 required to activate 200 Free Spins on Atlantean
-        Treasures: Mega Moolah. <br>
-        Each spin is valued at $0.10. Winnings from spins carry a 35x wagering requirement. 
-        <br> Free Spins must be used
-        within 7 days of registration.
-        Game volatility: Medium*.</p>
-      <div class="offer-grid">
-        <!-- <div class="offer-item">
-          <strong>Game Name:</strong> Atlantean Treasures: Mega Moolah
-        </div>
-        <div class="offer-item">
-          <strong>Free Spins:</strong> 200
-        </div>
-        <div class="offer-item">
-          <strong>Minimum Deposit:</strong> $10
-        </div>
-        <div class="offer-item">
-          <strong>Spin Value:</strong> $0.10
-        </div>
-        <div class="offer-item">
-          <strong>Wagering Requirement:</strong> 35x
-        </div>
-        <div class="offer-item">
-          <strong>Offer Expiry:</strong> 7 days from signing up
-        </div>
-        <div class="offer-item">
-          <strong>Game Volatility:</strong> Medium
-        </div> -->
+
+      <div class="offer-item">
+        <h3>Who’s it for?</h3>
+        <p>New players only, aged 18 or over.</p>
       </div>
+      <div class="offer-item">
+        <h3>How do I get involved?</h3>
+        <ul>
+          <li>Register an account with a valid email and ID.</li>
+          <li>Make a <strong>minimum deposit of $10</strong>.</li>
+          <li>Free Spins are activated automatically after deposit.</li>
+          <li>Offer must be claimed within <strong>7 days of registration</strong>.</li>
+        </ul>
+      </div>
+      <div class="offer-item">
+        <h3>What are the Eligible Games?</h3>
+        <ul>
+          <li><strong>Atlantean Treasures: Mega Moolah</strong></li>
+          <li><em>Other eligible games: [placeholder – please update if applicable]</em></li>
+        </ul>
+      </div>
+      <div class="offer-item">
+        <h3>What’s in it for me?</h3>
+        <ul>
+          <li><strong>200 Free Spins</strong> on Atlantean Treasures: Mega Moolah</li>
+          <li>Each spin is valued at <strong>$0.10</strong></li>
+          <li>Winnings are subject to a <strong>35x wagering requirement</strong></li>
+        </ul>
+      </div>
+      <div class="offer-item">
+        <h3>When do I get my reward?</h3>
+        <ul>
+          <li>Free Spins are credited <strong>immediately after deposit</strong></li>
+          <li>You must launch the game to activate your spins</li>
+          <li>Spins expire <strong>7 days</strong> after registration</li>
+        </ul>
+      </div>
+
+      <div class="offer-item">
+        <h3>Any other key details?</h3>
+        <ul>
+          <li>Game volatility: <strong>Medium*</strong></li>
+          <li>Free Spins are <strong>non-withdrawable</strong></li>
+          <li>Standard promotional terms apply</li>
+          <li><em>*Volatility rating is based on internal metrics and may vary by region.</em></li>
+        </ul>
+      </div>
+      
 
       <p class="disclaimer">*Terms and conditions apply. Please play responsibly.</p>
     </div>
@@ -40,14 +59,50 @@
 <style scoped lang="scss">
 .offer-details {
   //background: linear-gradient(to right, #00293c, #014152);
-  background: rgba(15, 15, 15, 0.5);
+  background: #000;
   color: #fff;
-  padding: 2rem 1rem;
+  padding-top: 2rem;
 
   .details-wrapper {
+    padding-left: 9rem;
     max-width: 1000px;
-    margin: 0 auto;
     text-align: left;
+
+    .offer-item {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border-left: 2px solid #a1a1a1;
+      /* Highlighted left border */
+      //background-color:  rgba(249, 249, 249, 0.5);
+      border-radius: 6px;
+    }
+
+    .offer-item h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.125rem;
+      /* 18px */
+      font-weight: 600;
+      color: var(--primary-text);
+    }
+
+    .offer-item p,
+    .offer-item ul {
+      margin: 0;
+      font-size: 1rem;
+      /* 16px */
+      color: var(--primary-text);
+    }
+
+    .offer-item ul {
+      padding-left: 1.2rem;
+      list-style-type: disc;
+    }
+
+    .offer-item li {
+      margin-bottom: 0.5rem;
+    }
+
   }
 
   .title {
@@ -56,24 +111,13 @@
     font-weight: bold;
     color: var(--primary-text);
   }
-p{
-  font-size: small;
-}
+
+  p {
+    font-size: small;
+  }
+
   .offer-grid {
     margin-bottom: 2rem;
-
-    .offer-item {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-      font-size: 1rem;
-      line-height: 1.5;
-
-      strong {
-        color: #00ffd0;
-      }
-    }
   }
 
   .disclaimer {
