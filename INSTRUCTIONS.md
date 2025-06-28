@@ -5,6 +5,10 @@
 
 Thank you for reviewing this project! Please follow the steps below to **clone**, **install**, and **run** the project locally.
 
+## Prerequisites
+
+- **Node.js** (v18 or later recommended)
+
 ## Clone the Repository
 
 ```bash
