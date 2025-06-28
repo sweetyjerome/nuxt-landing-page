@@ -1,5 +1,5 @@
 
-# 📘 INSTRUCTIONS.md
+# INSTRUCTIONS.md
 
 ## Project Setup Instructions
 
@@ -7,7 +7,7 @@ Thank you for reviewing this project! Please follow the steps below to **clone**
 
 ---
 
-## 📂 Clone the Repository
+## Clone the Repository
 
 ```bash
 git clone https://github.com/sweetyjerome/nuxt-landing-page.git
@@ -16,7 +16,7 @@ cd nuxt-landing-page
 
 ---
 
-## 📦 Install Dependencies
+## Install Dependencies
 
 Using **npm**:
 
@@ -36,7 +36,7 @@ This will start the local development server (usually at `http://localhost:3000`
 
 ---
 
-## 📁 Main Folder Structure (Simplified)
+## Main Folder Structure (Simplified)
 
 ```
 .
