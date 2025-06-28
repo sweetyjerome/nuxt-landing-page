@@ -1,14 +1,17 @@
 <template>
   <section class="offer-details">
+
+    <Steps />
+
     <div class="details-wrapper">
       <h2 class="title">Offer Details</h2>
 
       <div class="offer-item">
-        <h4>Who’s it for?</h4>
+        <h4>Who?</h4>
         <p>New players only, aged 18 or over.</p>
       </div>
       <div class="offer-item">
-        <h4>How do I get involved?</h4>
+        <h4>How?</h4>
         <ul>
           <li>Register an account with a valid email and ID.</li>
           <li>Make a <strong>minimum deposit of $10</strong>.</li>
@@ -17,48 +20,28 @@
         </ul>
       </div>
       <div class="offer-item">
-        <h4>What are the Eligible Games?</h4>
+        <h4>What?</h4>
         <ul>
           <li><strong>Atlantean Treasures: Mega Moolah</strong></li>
-          <li><em>Other eligible games: [placeholder – please update if applicable]</em></li>
         </ul>
       </div>
       <div class="offer-item">
-        <h4>What’s in it for me?</h4>
+        <h4>Other key details?</h4>
         <ul>
           <li><strong>200 Free Spins</strong> on Atlantean Treasures: Mega Moolah</li>
           <li>Each spin is valued at <strong>$0.10</strong></li>
           <li>Winnings are subject to a <strong>35x wagering requirement</strong></li>
         </ul>
       </div>
-      <div class="offer-item">
-        <h4>When do I get my reward?</h4>
-        <ul>
-          <li>Free Spins are credited <strong>immediately after deposit</strong></li>
-          <li>You must launch the game to activate your spins</li>
-          <li>Spins expire <strong>7 days</strong> after registration</li>
-        </ul>
-      </div>
-
-      <div class="offer-item">
-        <h4>Any other key details?</h4>
-        <ul>
-          <li>Game volatility: <strong>Medium*</strong></li>
-          <li>Free Spins are <strong>non-withdrawable</strong></li>
-          <li>Standard promotional terms apply</li>
-          <li><em>*Volatility rating is based on internal metrics and may vary by region.</em></li>
-        </ul>
-      </div>
-      
-
-      <p class="disclaimer">*Terms and conditions apply. Please play responsibly.</p>
     </div>
   </section>
 </template>
 
 <style scoped lang="scss">
 .offer-details {
-  background: #000;
+  //background-color: var(--tertiary-accent);
+  background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 56%, rgba(0, 212, 255, 1) 100%);
+
   color: #fff;
 
   .details-wrapper {
@@ -104,7 +87,7 @@
     margin-bottom: 2rem;
     font-weight: bold;
     color: var(--primary-text);
-    text-align: left; 
+    text-align: left;
   }
 
   p {
@@ -119,15 +102,15 @@
 
   @media (max-width: 425px) {
     .details-wrapper {
-      padding: 0 1rem; 
+      padding: 0 1rem;
     }
 
     .offer-item {
-      padding: 0.75rem; 
+      padding: 0.75rem;
     }
 
     .offer-item h3 {
-      font-size: 1rem; 
+      font-size: 1rem;
     }
 
     .offer-item p,
@@ -136,12 +119,12 @@
     }
 
     .title {
-      font-size: 1.25rem; 
+      font-size: 1.25rem;
       text-align: center;
     }
 
     .disclaimer {
-      font-size: 0.8rem; 
+      font-size: 0.8rem;
       text-align: center;
     }
   }
