@@ -9,7 +9,10 @@ Thank you for reviewing this project! Please follow the steps below to **clone**
 
 ```bash
 git clone https://github.com/sweetyjerome/nuxt-landing-page.git
-cd nuxt-landing-page
+```
+If not inside the directory - 
+```
+cd nuxt-landing-page  
 ```
 
 
