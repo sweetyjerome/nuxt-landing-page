@@ -1,4 +1,3 @@
-<!-- OfferSteps.vue -->
 <template>
   <div class="offer-steps">
     <div class="steps">

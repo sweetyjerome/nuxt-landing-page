@@ -53,7 +53,7 @@ const formattedJackpot = computed(() =>
     : ''
 );
 
-// Handle button click
+
 const handleClaimNow = () => {
   console.log('Claim Now button clicked!');
 };
@@ -75,7 +75,7 @@ const handleClaimNow = () => {
 
   @media (max-width: 425px) {
     padding: 0 1rem;
-    background-size: contain; // Makes the image fit without cropping
+    background-size: contain; 
     background-position: top;
     min-height: 100vh;
     text-align: center;
@@ -153,7 +153,7 @@ const handleClaimNow = () => {
   }
 
   .hero-left {
-    flex: 0 0 70%; // Take 60% of the width
+    flex: 0 0 70%; 
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -212,7 +212,7 @@ const handleClaimNow = () => {
     //------------------------- media queries -------------------------
     @media screen and (max-width: 425px) {
       .hero-left {
-        flex: 1; // Take full width on smaller screens
+        flex: 1; 
         display: flex;
         align-items: center;
         text-align: center;
@@ -230,15 +230,15 @@ const handleClaimNow = () => {
       }
 
       .hero-heading {
-        font-size: 1.8rem; // Adjusted for smaller screens
+        font-size: 1.8rem; 
       }
 
       .hero-subheading {
-        font-size: 1rem; // Adjusted for smaller screens
+        font-size: 1rem; 
       }
 
       .terms {
-        font-size: 0.6rem; // Adjusted for smaller screens
+        font-size: 0.6rem; 
         margin-top: 0.3rem;
       }
 
@@ -271,7 +271,7 @@ const handleClaimNow = () => {
     //-------------------------- media queries -------------------------
     @media screen and (max-width: 425px) {
       .hero-right {
-        flex: 1; // Take full width on smaller screens
+        flex: 1; 
         display: flex;
         align-items: center;
         justify-content: center;
@@ -284,7 +284,7 @@ const handleClaimNow = () => {
           border-radius: 8px;
           margin: 5% 0 5% 20%;
          // margin-left: 2rem;
-          display: block; // Ensure the video is treated as a block element
+          display: block; 
         }
     
 

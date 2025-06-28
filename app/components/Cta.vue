@@ -1,12 +1,10 @@
 <template>
   <section class="cta">
     <div class="cta-container">
-      <!-- Left: Image -->
       <div class="cta-left">
         <img src="/img/bubble_2.png" alt="Bubble" class="cta-image" />
       </div>
 
-      <!-- Right: Text Content -->
       <div class="cta-right">
         <h2 class="cta-heading">Ready to Win Big?</h2>
         <p class="cta-subtext">
@@ -64,8 +62,7 @@
   font-size: 1rem;
   margin-bottom: 1.5rem;
 }
-
-/* Responsive: Stack vertically, hide image */
+/* ----------------------media queries-----------------*/
 @media (max-width: 425px) {
   .cta-container {
     flex-direction: column;

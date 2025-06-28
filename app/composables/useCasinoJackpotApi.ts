@@ -1,5 +1,3 @@
-// composables/useCasinoJackpotApi.ts
-
 interface JackpotEntry {
   friendly_name: string
   jackpot_amount: number
@@ -23,7 +21,7 @@ export const useCasinoJackpotApi = () => {
 
   onMounted(() => {
     fetchJackpot()
-    //Call every 1 second
+    //Call every second
     const interval = setInterval(fetchJackpot, 1000)
     onUnmounted(() => {
       clearInterval(interval)

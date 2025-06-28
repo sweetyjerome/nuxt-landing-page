@@ -14,11 +14,11 @@ const emit = defineEmits(['click'])
 const { label, variant } = defineProps({
   label: {
     type: String,
-    default: 'Claim Now', // Default button label
+    default: 'Claim Now', // Default 
   },
   variant: {
     type: String,
-    default: 'primary', // Default variant is primary
+    default: 'primary', // Default 
     validator: (value: string) => ['primary', 'secondary'].includes(value), // Only allow 'primary' or 'secondary'
   },
 })

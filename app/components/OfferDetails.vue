@@ -18,7 +18,7 @@
   </section>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .offer-details-wrapper {
   display: flex;
   justify-content: space-between;
