@@ -10,6 +10,7 @@
     </div>
   </div>
 </section>
+<CtaFooter />
 </template>
 
 <script setup lang="ts">
@@ -32,10 +33,11 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
+  text-transform: uppercase;
 }
 
 .cta-subtext {
-  font-size: 1.125rem;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
 }
 
