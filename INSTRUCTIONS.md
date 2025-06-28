@@ -42,9 +42,9 @@ This will start the local development server (usually at `http://localhost:3000`
 .
 ├── components/
 │   └── shared/
-        ├── Header.vue
+│       ├── Header.vue
 │       └── Footer.vue
-│   ├── Hero.vue
+│   └── Hero.vue
 │   ├── Button.vue
 │   ├── Cta.vue
 │   ├── CtaFooter.vue
