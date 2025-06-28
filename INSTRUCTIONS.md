@@ -5,11 +5,18 @@
 
 Thank you for reviewing this project! Please follow the steps below to **clone**, **install**, and **run** the project locally.
 
+## Prerequisites
+
+- **Node.js** (v18 or later recommended)
+
 ## Clone the Repository
 
 ```bash
 git clone https://github.com/sweetyjerome/nuxt-landing-page.git
-cd nuxt-landing-page
+```
+If not inside the directory - 
+```
+cd nuxt-landing-page  
 ```
 
 
