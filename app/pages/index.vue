@@ -7,7 +7,7 @@
   <div>
     <div class="grid grid--row">
       <Hero /> 
-      <Offerdetails />
+      <OfferDetails />
       <Cta/>
     </div>
   </div>

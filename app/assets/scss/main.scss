@@ -2,7 +2,8 @@
     --primary-background: #000; //Change later
     --primary-accent: #3FAB99;
     --secondary-accent: #3AE8C2;
-    --tertiary-accent: #32A0DB;
+    --tertiary-accent: #32A0DB ;
+    --tertiary-background: #75ceff;
     --primary-text: #fffee7;
     --secondary-text: var(--primary-background);
 }
@@ -120,7 +121,7 @@ p {
       color: var(--primary-text);
     background-color: var(--tertiary-accent);
     &:hover {
-          background-color: var(--primary-background)
+          background-color: var(--tertiary-background)
 
     }
   }
