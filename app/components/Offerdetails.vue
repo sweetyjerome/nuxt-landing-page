@@ -4,11 +4,11 @@
       <h2 class="title">Offer Details</h2>
 
       <div class="offer-item">
-        <h3>Who’s it for?</h3>
+        <h4>Who’s it for?</h4>
         <p>New players only, aged 18 or over.</p>
       </div>
       <div class="offer-item">
-        <h3>How do I get involved?</h3>
+        <h4>How do I get involved?</h4>
         <ul>
           <li>Register an account with a valid email and ID.</li>
           <li>Make a <strong>minimum deposit of $10</strong>.</li>
@@ -17,14 +17,14 @@
         </ul>
       </div>
       <div class="offer-item">
-        <h3>What are the Eligible Games?</h3>
+        <h4>What are the Eligible Games?</h4>
         <ul>
           <li><strong>Atlantean Treasures: Mega Moolah</strong></li>
           <li><em>Other eligible games: [placeholder – please update if applicable]</em></li>
         </ul>
       </div>
       <div class="offer-item">
-        <h3>What’s in it for me?</h3>
+        <h4>What’s in it for me?</h4>
         <ul>
           <li><strong>200 Free Spins</strong> on Atlantean Treasures: Mega Moolah</li>
           <li>Each spin is valued at <strong>$0.10</strong></li>
@@ -32,7 +32,7 @@
         </ul>
       </div>
       <div class="offer-item">
-        <h3>When do I get my reward?</h3>
+        <h4>When do I get my reward?</h4>
         <ul>
           <li>Free Spins are credited <strong>immediately after deposit</strong></li>
           <li>You must launch the game to activate your spins</li>
@@ -41,7 +41,7 @@
       </div>
 
       <div class="offer-item">
-        <h3>Any other key details?</h3>
+        <h4>Any other key details?</h4>
         <ul>
           <li>Game volatility: <strong>Medium*</strong></li>
           <li>Free Spins are <strong>non-withdrawable</strong></li>
@@ -62,7 +62,7 @@
   color: #fff;
 
   .details-wrapper {
-    padding: 9rem;
+    padding: 3rem 9rem 3rem 9rem;
     max-width: 100%;
     text-align: left;
 
@@ -74,10 +74,10 @@
       border-radius: 6px;
     }
 
-    .offer-item h3 {
+    .offer-item h4 {
       margin-top: 0;
       margin-bottom: 0.5rem;
-      font-size: 1.125rem; 
+      //font-size: 1.125rem; 
       font-weight: 600;
       color: var(--primary-text);
     }
@@ -132,16 +132,16 @@
 
     .offer-item p,
     .offer-item ul {
-      font-size: 0.7rem; // Reduce text size
+      font-size: 0.7rem;
     }
 
     .title {
-      font-size: 1.25rem; // Reduce title size
+      font-size: 1.25rem; 
       text-align: center;
     }
 
     .disclaimer {
-      font-size: 0.8rem; // Reduce disclaimer text size
+      font-size: 0.8rem; 
       text-align: center;
     }
   }

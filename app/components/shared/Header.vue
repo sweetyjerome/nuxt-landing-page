@@ -6,7 +6,7 @@
       <!-- Buttons -->
       <nav class="nav">
         <a href="/" class="btn btn--secondary btn--md" aria-label="Sign In">Sign In</a>
-        <a href="/" class="btn btn--primary btn--md" aria-label="Sign Up">Sign Up</a>
+        <a href="/" class="btn btn--primary btn--md required" aria-label="Sign Up">Sign Up</a>
       </nav>
     </div>
   </header>
@@ -34,12 +34,14 @@
   gap: 1rem;
   padding: 0 1.5rem;
 }
+a{ display: inline-block;}
+
 @media (max-width: 425px) {
   .header {
     padding: 0.5rem 0;
 
     .container {
-      flex-direction: column; /* Stack logo and nav vertically */
+      flex-direction: row; 
       align-items: center;
       gap: 0.5rem;
     }
@@ -49,13 +51,16 @@
     }
 
     .nav {
-      flex-direction: column; /* Stack buttons vertically */
+      flex-direction: column;
       gap: 0.5rem;
 
-      a {
-        display: none;
+      a.required {
+        display: inline-block;
         font-size: 0.9rem; /* Reduce button font size */
         padding: 0.4rem 0.8rem; /* Adjust button padding */
+      }
+      a {
+        display: none;
       }
     }
   }

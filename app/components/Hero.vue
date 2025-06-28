@@ -12,17 +12,12 @@
         <div class="info-box">
           <h5 class="info">Exclusive offer</h5>
         </div>
-        <p class="hero-heading"> Grab 200 Free Spins</p>
+        <p class="hero-heading">Grab 200 Free Spins</p>
         <p class="hero-subheading">Now is the time to grab your riches</p>
-        <!--   
-        <video autoplay muted loop playsinline class="hero-video">
-          <source src="https://cdn.desdev.co/atlanteantreasures.webm" type="video/webm" />
-          Your browser does not support the video tag.
-        </video> -->
      
-        <Button @click="" />
+        <Button label="Claim Now" variant="primary" @click="handleClaimNow" />
         <p class="terms">
-          Deposit just $10 and activate your 200 free spins instantly.<br>Full terms below.
+          Deposit just $10 and activate your 200 free spins instantly.<br />Full terms below.
         </p>
       </div>
 
@@ -33,17 +28,9 @@
           <source src="https://cdn.desdev.co/atlanteantreasures.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video>
-
       </div>
     </div>
   </section>
-
-
-
-
-
-
-
 </template>
 
 <script setup lang="ts">
@@ -56,7 +43,12 @@ const formattedJackpot = computed(() =>
       currency: 'USD',
     }).format(jackpot.value)
     : ''
-)
+);
+
+// Handle button click
+const handleClaimNow = () => {
+  console.log('Claim Now button clicked!');
+};
 </script>
 
 <style scoped lang="scss">
@@ -85,7 +77,7 @@ const formattedJackpot = computed(() =>
 
     .game-logo {
       align-self: flex-start;
-      margin-top: 7rem;
+      margin-top:8rem;
       width: 200px;
       transform: scale(0.5);
       opacity: 0;
@@ -118,7 +110,7 @@ const formattedJackpot = computed(() =>
 
       .game-logo {
         width: 150px;
-        margin-top: 0;
+        margin-top: -5rem;
         transform: scale(1);
       }
 

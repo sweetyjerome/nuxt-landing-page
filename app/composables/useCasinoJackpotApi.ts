@@ -39,9 +39,9 @@ export const useCasinoJackpotApi = () => {
     return latest ? latest.jackpot_amount : null
   })
 
-  watch(data, () => {
-    console.log('Computed jackpot updated watching:', jackpot.value)
-  })
+ // watch(data, () => {
+    //console.log('Computed jackpot updated watching:', jackpot.value)
+  //})
 
   return {
     jackpot,
