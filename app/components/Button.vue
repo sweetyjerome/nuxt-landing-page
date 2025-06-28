@@ -1,11 +1,32 @@
 <template>
-  <button class="claim-now-btn" @click="emit('click')">
-    <slot>Claim Now</slot>
+  <button
+    :class="['claim-now-btn', variantClass]"
+    @click="emit('click')"
+  >
+    <slot>{{ label }}</slot>
   </button>
 </template>
 
 <script setup lang="ts">
 const emit = defineEmits(['click'])
+
+// Props for the button
+const { label, variant } = defineProps({
+  label: {
+    type: String,
+    default: 'Claim Now', // Default button label
+  },
+  variant: {
+    type: String,
+    default: 'primary', // Default variant is primary
+    validator: (value: string) => ['primary', 'secondary'].includes(value), // Only allow 'primary' or 'secondary'
+  },
+})
+
+// Compute the class based on the variant
+const variantClass = computed(() => {
+  return variant === 'secondary' ? 'btn-secondary' : 'btn-primary'
+})
 </script>
 
 <style scoped>
@@ -17,7 +38,6 @@ const emit = defineEmits(['click'])
   font-size: 1.2rem;
   font-weight: normal;
   color: var(--primary-text);
-  background-color: var(--primary-accent);
   border: none;
   border-radius: 0.25rem;
   overflow: hidden;
@@ -26,9 +46,30 @@ const emit = defineEmits(['click'])
   transition: background-color 0.3s ease;
 }
 
-.claim-now-btn:hover {
-  color: var(--primary-text);
+.btn-primary {
+  background-color: var(--primary-accent);
+}
+
+.btn-primary:hover {
   background-color: var(--secondary-accent);
   transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-accent);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-accent);
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 425px) {
+  .claim-now-btn {
+    margin-top: 0.5rem;
+    width: 50%;
+    padding: 0.75rem 0.75rem;
+    font-size: 0.8rem;
+  }
 }
 </style>
