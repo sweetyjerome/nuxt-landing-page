@@ -1,7 +1,6 @@
 export default defineEventHandler(async (event) => {
   try {
     const res = await $fetch('https://jackpots.desdev.co/')
-    console.log('Fetched jackpot data:', res)
     return res
 
   } catch (err) {

@@ -31,10 +31,10 @@ export const useCasinoJackpotApi = () => {
   })
 
   const jackpot = computed(() => {
-    console.log('Computing latest jackpot', data.value)
+    //console.log('Computing latest jackpot', data.value)
     const jackpots = data.value || []
     const filtered = jackpots.filter(item => item.friendly_name === 'Atlantean Treasures: Mega Moolah')
-    console.log('Filtered jackpots:', filtered)
+    //console.log('Filtered jackpots:', filtered)
     const latest = filtered[0] //if there are duplicates, take the first one
     return latest ? latest.jackpot_amount : null
   })
