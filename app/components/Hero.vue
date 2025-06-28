@@ -1,35 +1,43 @@
 <template>
   <section class="hero">
-    <!-- Game logo and jackpot value -->
-    <div class="logo-container">
-      <img src="/img/atlantean_treasures_logo.png" alt="Game Logo" class="game-logo" />
-      <div v-if="formattedJackpot" class="jackpot-chip">{{ formattedJackpot }}</div>
+    <div v-if="pending">
+      <LoadingSpinner />
     </div>
 
-    <div class="hero-content">
-      <!-- Left Section: Heading, Subheading -->
-      <div class="hero-left">
-        <div class="info-box">
-          <h5 class="info">Exclusive offer</h5>
+    <div v-else>
+      <!-- Game logo and jackpot value -->
+      <div class="logo-container">
+        <img src="/img/atlantean_treasures_logo.png" alt="Game Logo" class="game-logo" />
+        <div v-if="formattedJackpot" class="jackpot-chip">{{ formattedJackpot }}</div>
+      </div>
+
+      <div class="hero-content">
+        <!-- Left Section: Heading, Subheading -->
+        <div class="hero-left">
+          <div class="info-box">
+            <h5 class="info">Exclusive offer</h5>
+          </div>
+          <p class="hero-heading">Grab 200 Free Spins</p>
+          <p class="hero-subheading">It's time to grab your riches!</p>
+
+          <Button label="Claim Now" variant="primary" @click="handleClaimNow" />
+          <p class="terms">
+            Deposit just $10 and activate your 200 free spins instantly.<br />Full terms below.
+          </p>
         </div>
-        <p class="hero-heading">Grab 200 Free Spins</p>
-        <p class="hero-subheading">Now is the time to grab your riches</p>
-     
-        <Button label="Claim Now" variant="primary" @click="handleClaimNow" />
-        <p class="terms">
-          Deposit just $10 and activate your 200 free spins instantly.<br />Full terms below.
-        </p>
-      </div>
 
-      <!-- Right Section: Images and video -->
-      <div class="hero-right">
-        <!-- <img src="/img/bubble_1.png" alt="Bubble-1" class="bubble" /> -->
-        <video autoplay muted loop playsinline class="hero-video">
-          <source src="https://cdn.desdev.co/atlanteantreasures.webm" type="video/webm" />
-          Your browser does not support the video tag.
-        </video>
+        <!-- Right Section: Images and video -->
+        <div class="hero-right">
+          <!-- <img src="/img/bubble_1.png" alt="Bubble-1" class="bubble" /> -->
+          <video autoplay muted loop playsinline class="hero-video">
+            <source src="https://cdn.desdev.co/atlanteantreasures.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
+
+
   </section>
 </template>
 
@@ -55,7 +63,7 @@ const handleClaimNow = () => {
 .hero {
   position: relative;
   width: 100vw;
-  height: 80vh;
+  min-height: 100vh;
   padding: 0 6rem;
   background: url('/img/hero.jpg') no-repeat center center / cover;
   display: flex;
@@ -69,29 +77,36 @@ const handleClaimNow = () => {
     padding: 0 1rem;
     background-size: contain; // Makes the image fit without cropping
     background-position: top;
+    min-height: 100vh;
+    text-align: center;
   }
 
 
   .logo-container {
-    gap: 2rem;
+    gap: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
 
     .game-logo {
-      align-self: flex-start;
-      margin-top:8rem;
-      width: 200px;
+      align-self: center;
+      margin-top: 8rem;
+      width: 280px;
       transform: scale(0.5);
       opacity: 0;
-      animation: popScale 0.8s ease-out 1.2s forwards;
+      animation: popScale 0.8s ease-out 0.5s forwards;
     }
 
     .jackpot-chip {
-      margin-top: 1rem;
+
       background: radial-gradient(circle, rgba(248, 251, 63, 1) 0%, rgba(224, 157, 49, 1) 100%);
       color: #000;
       border: 2px solid #fff;
       border-radius: 20px;
       padding: 0.5rem 1rem;
-      font-size: 1.4rem;
+      font-size: 1.8rem;
       font-weight: bold;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -106,7 +121,7 @@ const handleClaimNow = () => {
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      margin-top: 15rem;
+      margin-top: 8rem;
 
       .game-logo {
         width: 150px;
@@ -204,14 +219,16 @@ const handleClaimNow = () => {
         justify-content: center;
         padding: 1rem;
       }
+
       .info-box {
 
-      margin-bottom: 0.3rem;
-    }
+        margin-bottom: 0.3rem;
+      }
 
-    .info {
-      font-size: 0.6rem;
-    }
+      .info {
+        font-size: 0.6rem;
+      }
+
       .hero-heading {
         font-size: 1.8rem; // Adjusted for smaller screens
       }
@@ -224,12 +241,12 @@ const handleClaimNow = () => {
         font-size: 0.6rem; // Adjusted for smaller screens
         margin-top: 0.3rem;
       }
-      
+
     }
 
   }
 
-//-------------------------- Right Section -------------------------
+  //-------------------------- Right Section -------------------------
   .hero-right {
     padding-right: 3rem;
     flex: 0 0 30%; // Take 40% of the width
@@ -245,19 +262,13 @@ const handleClaimNow = () => {
       transform: translateY(20px);
     }
 
-    .bubble {
-      animation: popScale 1s 0.3s ease-out forwards;
-    }
-
-    .number {
-      animation: popScale 1s 0.6s ease-out forwards;
-    }
-
     .hero-video {
       width: 120%;
-      border-radius: 12px; 
+      border-radius: 12px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-//-------------------------- media queries -------------------------
+    }
+
+    //-------------------------- media queries -------------------------
     @media screen and (max-width: 425px) {
       .hero-right {
         flex: 1; // Take full width on smaller screens
@@ -265,31 +276,37 @@ const handleClaimNow = () => {
         align-items: center;
         justify-content: center;
         padding: 1rem;
-
-        .hero-video {
-          width: 50%;
-          border-radius: 8px;
-        }
+        width: 100%;
       }
-      
+        .hero-video {
+          width: 100%; 
+          max-width: 300px; 
+          border-radius: 8px;
+          margin: 5% 0 5% 20%;
+         // margin-left: 2rem;
+          display: block; // Ensure the video is treated as a block element
+        }
+    
+
+    }
+
+  }
+
+  @keyframes popScale {
+    0% {
+      transform: scale(0.5);
+      opacity: 0.5;
+    }
+
+    60% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
     }
   }
-}
-@keyframes popScale {
-  0% {
-    transform: scale(0.5);
-    opacity: 0.5;
-  }
-
-  60% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 }
 </style>
